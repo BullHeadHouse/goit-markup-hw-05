@@ -74,9 +74,10 @@ p {
 .team-icon,
 .client-icon,
 .element,
+.element-thumbtitle,
 .street-address,
 .footer-icon {
-  transition-property: color, background-color, box-shadow;
+  transition-property: color, background-color, box-shadow, transform;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -415,6 +416,28 @@ p {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
+.element-thumb {
+  position: relative;
+  overflow: hidden;
+}
+.element:hover .element-thumbtitle {
+  transform: translateY(0);
+}
+.element-thumbtitle {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  padding: 63px 24px;
+
+  font-size: 18px;
+  line-height: 1.56;
+  color: var(--white-color);
+  background-color: rgba(33, 150, 243, 0.9);
+
+  /* opacity: 0.5; */
+  transform: translateY(100%);
+}
 .project-titletype {
   padding: 20px 24px;
   border: 1px solid #eeeeee;
@@ -497,11 +520,36 @@ p {
   margin-right: 10px;
 }
 .footer-icon {
+  border-radius: 50%;
+
   color: var(--white-color);
   background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
 }
 .footer-icon:hover,
 .footer-icon:focus {
   background-color: var(--accent-color);
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  min-width: 528px;
+  min-height: 581px;
+
+  background-color: var(--white-color);
+}
+.modal-close {
 }
