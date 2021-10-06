@@ -80,7 +80,8 @@ p {
 .footer-icon,
 .bdackdrop,
 .modal-close {
-  transition-property: color, background-color, box-shadow, transform, opacity;
+  transition-property: color, background-color, box-shadow, transform, opacity,
+    border;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
